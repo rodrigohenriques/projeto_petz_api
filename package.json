@@ -1,0 +1,19 @@
+{
+  "name": "pets",
+  "version": "1.0.0",
+  "description": "Pet API.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjetoPets/api.git"
+  },
+  "author": "Diego Ramos <rdiego26@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProjetoPets/api/issues"
+  },
+  "homepage": "https://github.com/ProjetoPets/api#readme"
+}
