@@ -24,10 +24,10 @@ describe('User Spec', function() {
         });
     });
 
-    it('not should create client passing blank client', function(done) {
-        var _invalidClient = {};
+    it('not should create user passing blank user', function(done) {
+        var _invalidUser = {};
 
-        userDao.create(_invalidClient).then(function() {
+        userDao.create(_invalidUser).then(function() {
         }).catch(function() {
             done();
         });
