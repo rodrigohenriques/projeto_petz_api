@@ -33,5 +33,28 @@ describe('User Spec', function() {
         });
     });
 
+    it('should create valid user', function(done) {
+    var _user = _validUser;
+	    userDao.create(_user).then(function() {
+		    userDao.deleteOne({email: _validUser.email}).then(function() {
+        done();
+      });
+    });
+    });
+
+
+		it('should create valid user and find then', function(done) {
+			var _user = R.clone(_validUser);
+			userDao.create(_user).then(function() {
+				userDao.findOne({email: _user.email}).then(function(fetchedUser) {
+					assert.ok(fetchedUser.name === _user.name);
+					assert.ok(fetchedUser.email === _user.email);
+					assert.ok(fetchedUser.phone === _user.phone);
+					done();
+				});
+
+			});
+		});
+
 
 });
