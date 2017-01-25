@@ -3,21 +3,21 @@ const path = require('path'),
 
 var dao = {
 
-    findOne: function(query) {
-        query = query || {};
+  findOne: function(query) {
+    query = query || {};
 
-        return userModel.findOne({
-            where: query
-        });
-    },
+    return userModel.findOne({
+      where: query
+    });
+  },
 
-    create: function(user) {
-        return userModel.create(user);
-    },
+  create: function(user) {
+    return userModel.create(user);
+  },
 
-    deleteOne: function(query) {
-        return userModel.destroy({where: query});
-    }
+  deleteOne: function(query) {
+    return userModel.destroy({where: query});
+  }
 
 };
 
