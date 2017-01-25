@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/ProjetoPets/api/issues"
   },
+  "jscsConfig": "src/.jscsrc",
   "homepage": "https://github.com/ProjetoPets/api#readme",
   "dependencies": {
     "body-parser": "1.15.0",
