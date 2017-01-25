@@ -32,3 +32,5 @@ userRoutes(app);
 http.createServer(app).listen(app.get('port'), function() {
   console.log(app.get('title') + ' listening on port ' + app.get('port'));
 });
+
+module.exports = app;
