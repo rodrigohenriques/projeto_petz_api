@@ -1,11 +1,11 @@
 ﻿/*
 Created: 23/01/2017
-Modified: 23/01/2017
+Modified: 06/02/2017
 Project: Pets
 Model: Postgres 9.0
 Company: Pets
 Author: Diego Ramos
-Version: 0.0.1
+Version: 0.0.2
 Database: PostgreSQL 9.0
 */
 
@@ -26,7 +26,10 @@ CREATE TABLE "user"(
  "state" Character varying(80) NOT NULL,
  "city" Character varying(80) NOT NULL,
  "zip_code" Character varying(8) NOT NULL,
- "phone" Character varying(12) NOT NULL
+ "phone" Character varying(12) NOT NULL,
+ "active" Boolean DEFAULT false NOT NULL,
+ "register_at" Timestamp with time zone DEFAULT NOW() NOT NULL,
+ "last_update" Timestamp with time zone
 )
 ;
 
