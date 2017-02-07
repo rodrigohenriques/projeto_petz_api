@@ -17,25 +17,25 @@ const user = sequelize.define('user', {
     }
   },
   password: {
-    type: Sequelize.TEXT, allowNull: false
+    type: Sequelize.TEXT, allowNull: true
   },
   address: {
-    type: Sequelize.STRING(90), allowNull: false
+    type: Sequelize.STRING(90), allowNull: true
   },
   addressNumber: {
     type: Sequelize.STRING(10), allowNull: true, field: 'address_number'
   },
   state: {
-    type: Sequelize.STRING(80), allowNull: false
+    type: Sequelize.STRING(80), allowNull: true
   },
   city: {
-    type: Sequelize.STRING(80), allowNull: false
+    type: Sequelize.STRING(80), allowNull: true
   },
   zipCode: {
-    type: Sequelize.STRING(8), allowNull: false, field: 'zip_code'
+    type: Sequelize.STRING(8), allowNull: true, field: 'zip_code'
   },
   phone: {
-    type: Sequelize.STRING(12), allowNull: false, unique: true,
+    type: Sequelize.STRING(12), allowNull: true,
     validate: {
       is: /^[1-9]{2}[0-9]{8,9}/g
     }
