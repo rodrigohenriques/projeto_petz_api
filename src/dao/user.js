@@ -13,7 +13,8 @@ const dao = {
   },
 
   create: function(user) {
-    return userModel.create(user);
+    const newUser = R.pick(['name', 'email'], user);
+    return userModel.create(newUser);
   },
 
   deleteOne: function(query) {
