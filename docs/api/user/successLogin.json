@@ -9,8 +9,11 @@
   "city": "São Paulo",
   "zipCode": "00000000",
   "phone": "21984654492",
+  "registerAt": "2017-02-07T00:56:49.065Z",
+  "lastUpdate": null,
+  "active": true,
   "session": {
-    "token": "1439bf96-8d59-4d18-a063-beb90f5613c7",
-    "expires": "2017-01-25T13:08:50.526Z"
+    "token": "c3bb43cc-da60-4548-bbb4-c591f384bef5",
+    "expires": "2017-02-07T01:15:11.278Z"
   }
 }
