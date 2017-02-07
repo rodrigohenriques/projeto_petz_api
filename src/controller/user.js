@@ -10,7 +10,8 @@ const userController = {
     let loginData = req.body;
     const filter = {
       email: loginData.email,
-      password: loginData.password
+      password: loginData.password,
+      active: true
     };
 
     userDao.findOne(filter).then(function(user) {
