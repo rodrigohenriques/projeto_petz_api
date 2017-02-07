@@ -39,6 +39,15 @@ const user = sequelize.define('user', {
     validate: {
       is: /^[1-9]{2}[0-9]{8,9}/g
     }
+  },
+  registerAt: {
+    type: Sequelize.DATE, allowNull: false, defaultValue: Sequelize.NOW, field: 'register_at'
+  },
+  lastUpdate: {
+    type: Sequelize.DATE, allowNull: true, field: 'last_update'
+  },
+  active: {
+    type: Sequelize.BOOLEAN, allowNull: true, defaultValue: false
   }
 
 },
