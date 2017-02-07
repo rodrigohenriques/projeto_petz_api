@@ -1,7 +1,8 @@
 const path = require('path'),
+  R = require('ramda'),
     userModel = require(path.resolve('src/model/user'));
 
-var dao = {
+const dao = {
 
   findOne: function(query) {
     query = query || {};
@@ -17,6 +18,12 @@ var dao = {
 
   deleteOne: function(query) {
     return userModel.destroy({where: query});
+  },
+
+  update: function(newObject, filter) {
+    newObject = R.omit(['id'], newObject);
+
+    return userModel.update(newObject, { returning: true, where: filter });
   }
 
 };
