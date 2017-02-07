@@ -6,26 +6,39 @@ const path = require('path'),
 
 describe('User Spec', function() {
 
-    const _validUser = mocks.validUser;
+    const _fullUser = mocks.fullUser;
+		const _minimalUser = mocks.minimalUser;
 
     before(function() {
-        userDao.deleteOne({email: _validUser.email}).then(function() {
-            return;
+        userDao.deleteOne({email: _fullUser.email}).then(function() {
+
+	        userDao.deleteOne({email: _minimalUser.email}).then(function() {
+		        return;
+	        }).catch(function(err) {
+		        console.error(err);
+	        });
+
         }).catch(function(err) {
             console.error(err);
         });
     });
 
     after(function() {
-        userDao.deleteOne({email: _validUser.email}).then(function() {
-            return;
+        userDao.deleteOne({email: _fullUser.email}).then(function() {
+
+	        userDao.deleteOne({email: _minimalUser.email}).then(function() {
+		        return;
+	        }).catch(function(err) {
+		        console.error(err);
+	        });
+
         }).catch(function(err) {
             console.error(err);
         });
     });
 
     it('not should create user passing blank user', function(done) {
-        var _invalidUser = {};
+        const _invalidUser = {};
 
         userDao.create(_invalidUser).then(function() {
         }).catch(function() {
@@ -33,18 +46,30 @@ describe('User Spec', function() {
         });
     });
 
-    it('should create valid user', function(done) {
-    var _user = _validUser;
+    it('should create valid full user', function(done) {
+      const _user = _fullUser;
+
 	    userDao.create(_user).then(function() {
-		    userDao.deleteOne({email: _validUser.email}).then(function() {
+		    userDao.deleteOne({email: _fullUser.email}).then(function() {
         done();
       });
     });
     });
 
+		it('should create valid minimal user', function(done) {
+			const _user = _minimalUser;
+
+			userDao.create(_user).then(function() {
+				userDao.deleteOne({email: _minimalUser.email}).then(function() {
+					done();
+				});
+
+			});
+		});
+
 
 		it('should create valid user and find then', function(done) {
-			var _user = R.clone(_validUser);
+			var _user = R.clone(_fullUser);
 			userDao.create(_user).then(function() {
 				userDao.findOne({email: _user.email}).then(function(fetchedUser) {
 					assert.ok(fetchedUser.name === _user.name);
