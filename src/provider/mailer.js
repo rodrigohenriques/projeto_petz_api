@@ -14,7 +14,7 @@ const mailerProvider = {
     let request = sendgrid.emptyRequest();
 
     mail.content = [ {type: 'text/html', value: ' '} ];
-    mail.from = new helper.Email('contato@pets.com.br');
+    mail.from = new helper.Email('resende.89@hotmail.com');
     mail.template_id = constants.sendGrid.transactional.templateActiveUser;
     mail.personalizations = [
 
