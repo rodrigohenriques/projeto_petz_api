@@ -13,7 +13,7 @@ let authentication = {
     let token = req.headers['x-access-token'] ||  null;
     let requestURL = req.originalUrl;
 
-    if (requestURL === '/api/user/login' || requestURL == '/api/user') {
+    if (requestURL === '/api/user/login' || (requestURL.indexOf('/api/user') > -1 && req.method === 'GET')) {
       next();
     } else if (!token) {
       res.status(401).end();
