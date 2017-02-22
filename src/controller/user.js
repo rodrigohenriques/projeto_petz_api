@@ -38,6 +38,16 @@ const userController = {
       res.status(500).json(error);
     });
 
+  },
+
+  get: function(req, res) {
+    let email = req.params.email || '';
+
+    userDao.findOne({email: email}).then(function(fetchedUser) {
+      res.status(200).json(fetchedUser);
+    }).catch(function(error) {
+      res.status(500).json(error);
+    });
   }
 
 };

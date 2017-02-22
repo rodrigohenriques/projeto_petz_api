@@ -6,6 +6,7 @@ module.exports = function(app) {
   const userController = require(path.resolve('src/controller/user'));
   const router = require('express').Router();
 
+  router.get('/api/user/:email', userController.get);
   router.post('/api/user/login', userController.login);
   router.post('/api/user', userController.create);
 
