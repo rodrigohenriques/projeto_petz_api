@@ -10,7 +10,7 @@ describe('API', function() {
 
 	describe('Login Resource', function() {
 
-		const _validUser = R.clone(mocks.validUser);
+		const _validUser = R.clone(mocks.fullUser);
 
 		afterEach(function(done) {
 
