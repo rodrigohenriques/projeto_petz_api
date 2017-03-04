@@ -8,7 +8,7 @@ const breed = sequelize.define('breed', {
     type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true
   },
   name: {
-    type: Sequelize.STRING(80), allowNull: false, unique: true
+    type: Sequelize.STRING(100), allowNull: false, unique: true
   }
 },
     {
