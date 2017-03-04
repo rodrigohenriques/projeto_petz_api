@@ -15,6 +15,11 @@ const mocks = {
 	minimalUser: {
 		name: 'Valid name',
 		email: 'other@valid.com'
+	},
+
+	breedOthers: {
+  	id: 1,
+		name: 'Outros'
 	}
 
 };
