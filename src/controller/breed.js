@@ -17,7 +17,7 @@ const breedController = {
 
   getAll: function(req, res) {
 
-    breedDao.find({}).then(function(fetchedBreeds) {
+    breedDao.findAll({}).then(function(fetchedBreeds) {
       res.status(200).json(fetchedBreeds);
     }).catch(function(error) {
       res.status(500).json(error);

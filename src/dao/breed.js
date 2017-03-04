@@ -1,5 +1,4 @@
 const path = require('path'),
-  R = require('ramda'),
     breedModel = require(path.resolve('src/model/breed'));
 
 const dao = {
@@ -7,7 +6,7 @@ const dao = {
   find: function(query) {
     query = query || {};
 
-    return breedModel.find({
+    return breedModel.findAll({
       where: query
     });
   },
