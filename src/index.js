@@ -7,6 +7,8 @@ const helmet = require('helmet');
 const authenticate = require(path.resolve('src/util/authenticate'));
 const constants = require(path.resolve('src/util/constants'));
 const userRoutes = require(path.resolve('src/routes/user'));
+const breedRoutes = require(path.resolve('src/routes/breed'));
+
 
 /* App Configuration */
 const app = express();
@@ -28,6 +30,7 @@ app.all('/api/*', function(req, res, next) {
 });
 
 userRoutes(app);
+breedRoutes(app);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log(app.get('title') + ' listening on port ' + app.get('port'));

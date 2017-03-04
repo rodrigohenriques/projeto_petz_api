@@ -1,0 +1,494 @@
+[
+  {
+    "id": 1,
+    "name": "Outros"
+  },
+  {
+    "id": 2,
+    "name": "Affenpinscher"
+  },
+  {
+    "id": 3,
+    "name": "Afghan Hound"
+  },
+  {
+    "id": 4,
+    "name": "Airedale Terrier"
+  },
+  {
+    "id": 5,
+    "name": "Akbash Dog"
+  },
+  {
+    "id": 6,
+    "name": "Akita Americano"
+  },
+  {
+    "id": 7,
+    "name": "Akita Inu"
+  },
+  {
+    "id": 8,
+    "name": "American Pitbull Terrier"
+  },
+  {
+    "id": 9,
+    "name": "Australian Cattle"
+  },
+  {
+    "id": 10,
+    "name": "Australian Shepherd"
+  },
+  {
+    "id": 11,
+    "name": "Barbet"
+  },
+  {
+    "id": 12,
+    "name": "Basenji"
+  },
+  {
+    "id": 13,
+    "name": "Basset Fulvo"
+  },
+  {
+    "id": 14,
+    "name": "Basset Griffon"
+  },
+  {
+    "id": 15,
+    "name": "Basset Hound"
+  },
+  {
+    "id": 16,
+    "name": "Beagle"
+  },
+  {
+    "id": 17,
+    "name": "Bearded Collie"
+  },
+  {
+    "id": 18,
+    "name": "Bernese Mountain Dog"
+  },
+  {
+    "id": 19,
+    "name": "Bichon Frisé"
+  },
+  {
+    "id": 20,
+    "name": "Bichon Havanês"
+  },
+  {
+    "id": 21,
+    "name": "Bloodhound"
+  },
+  {
+    "id": 22,
+    "name": "Border Collie"
+  },
+  {
+    "id": 23,
+    "name": "Borzoi"
+  },
+  {
+    "id": 24,
+    "name": "Bouvier de Flandres"
+  },
+  {
+    "id": 25,
+    "name": "Boston Terrier"
+  },
+  {
+    "id": 26,
+    "name": "Braco Alemão"
+  },
+  {
+    "id": 27,
+    "name": "Cairn Terrier"
+  },
+  {
+    "id": 28,
+    "name": "Cane Corso Italiano"
+  },
+  {
+    "id": 29,
+    "name": "Cão da Serra da Estrela"
+  },
+  {
+    "id": 30,
+    "name": "Dachshund"
+  },
+  {
+    "id": 31,
+    "name": "Dálmata"
+  },
+  {
+    "id": 32,
+    "name": "Dobermann"
+  },
+  {
+    "id": 33,
+    "name": "Dogue Alemão"
+  },
+  {
+    "id": 34,
+    "name": "Dogue de Bordeaux"
+  },
+  {
+    "id": 35,
+    "name": "Dogo Argentino"
+  },
+  {
+    "id": 124,
+    "name": "Fila Brasileiro"
+  },
+  {
+    "id": 125,
+    "name": "Flat Coated Retriever"
+  },
+  {
+    "id": 126,
+    "name": "Foxhound Inglês"
+  },
+  {
+    "id": 127,
+    "name": "Fox Terrier Pelo Duro"
+  },
+  {
+    "id": 128,
+    "name": "Fox Terrier Pelo Liso"
+  },
+  {
+    "id": 129,
+    "name": "Greyhound"
+  },
+  {
+    "id": 130,
+    "name": "Griffon de Bruxelas"
+  },
+  {
+    "id": 131,
+    "name": "Golden Retriever"
+  },
+  {
+    "id": 132,
+    "name": "Husky Siberiano"
+  },
+  {
+    "id": 133,
+    "name": "Irish Setter"
+  },
+  {
+    "id": 134,
+    "name": "Irish Wolfhound"
+  },
+  {
+    "id": 135,
+    "name": "Jack Russel Terrier"
+  },
+  {
+    "id": 136,
+    "name": "Keeshond"
+  },
+  {
+    "id": 137,
+    "name": "Kerry Blue Terrier"
+  },
+  {
+    "id": 138,
+    "name": "Komondor"
+  },
+  {
+    "id": 139,
+    "name": "Kurzhaar"
+  },
+  {
+    "id": 140,
+    "name": "Kuvasz"
+  },
+  {
+    "id": 141,
+    "name": "Labrador"
+  },
+  {
+    "id": 142,
+    "name": "Lhasa Apso"
+  },
+  {
+    "id": 143,
+    "name": "Lulu da Pomerânia"
+  },
+  {
+    "id": 144,
+    "name": "Malamute do Alaska"
+  },
+  {
+    "id": 145,
+    "name": "Maltês"
+  },
+  {
+    "id": 146,
+    "name": "Maremmano"
+  },
+  {
+    "id": 147,
+    "name": "Mastiff Inglês"
+  },
+  {
+    "id": 148,
+    "name": "Mastim Espanhol"
+  },
+  {
+    "id": 149,
+    "name": "Mastim Tibetano"
+  },
+  {
+    "id": 150,
+    "name": "Mastino Napoletano"
+  },
+  {
+    "id": 151,
+    "name": "Norfolk Terrier"
+  },
+  {
+    "id": 152,
+    "name": "Nova Scotia D. T. R."
+  },
+  {
+    "id": 153,
+    "name": "Old English Sheepdog"
+  },
+  {
+    "id": 154,
+    "name": "Otterhound"
+  },
+  {
+    "id": 155,
+    "name": "Pastor Alemão"
+  },
+  {
+    "id": 156,
+    "name": "Pastor de Beauce"
+  },
+  {
+    "id": 157,
+    "name": "Pastor Belga"
+  },
+  {
+    "id": 158,
+    "name": "Pastor Belga Groenendael"
+  },
+  {
+    "id": 159,
+    "name": "Pastor Belga Laekenois"
+  },
+  {
+    "id": 160,
+    "name": "Pastor Belga Malinois"
+  },
+  {
+    "id": 161,
+    "name": "Pastor Belga Tervuren"
+  },
+  {
+    "id": 162,
+    "name": "Pastor Bergamasco"
+  },
+  {
+    "id": 163,
+    "name": "Pastor Branco Suíço"
+  },
+  {
+    "id": 164,
+    "name": "Pastor de Cáucaso"
+  },
+  {
+    "id": 165,
+    "name": "Pastor Maremmano"
+  },
+  {
+    "id": 166,
+    "name": "Pastor de Shetland"
+  },
+  {
+    "id": 167,
+    "name": "Pastor de Tatra"
+  },
+  {
+    "id": 168,
+    "name": "Pastor dos Pirineus"
+  },
+  {
+    "id": 169,
+    "name": "Pequinês"
+  },
+  {
+    "id": 170,
+    "name": "Perdigueiro Português"
+  },
+  {
+    "id": 171,
+    "name": "Pinscher"
+  },
+  {
+    "id": 172,
+    "name": "Podengo Português"
+  },
+  {
+    "id": 173,
+    "name": "Pointer Inglês"
+  },
+  {
+    "id": 174,
+    "name": "Poodle"
+  },
+  {
+    "id": 175,
+    "name": "Pug"
+  },
+  {
+    "id": 176,
+    "name": "Puli"
+  },
+  {
+    "id": 177,
+    "name": "Pumi"
+  },
+  {
+    "id": 178,
+    "name": "Rhodesian Ridgeback"
+  },
+  {
+    "id": 179,
+    "name": "Rottweiler"
+  },
+  {
+    "id": 180,
+    "name": "Saluki"
+  },
+  {
+    "id": 181,
+    "name": "Samoieda"
+  },
+  {
+    "id": 182,
+    "name": "São Bernardo"
+  },
+  {
+    "id": 183,
+    "name": "Schipperke"
+  },
+  {
+    "id": 184,
+    "name": "Schnauzer Gigante"
+  },
+  {
+    "id": 185,
+    "name": "Schnauzer Miniatura"
+  },
+  {
+    "id": 186,
+    "name": "Schnauzer Standard"
+  },
+  {
+    "id": 187,
+    "name": "cottish Terrier"
+  },
+  {
+    "id": 188,
+    "name": "Setter Gordon"
+  },
+  {
+    "id": 189,
+    "name": "Setter Inglês"
+  },
+  {
+    "id": 190,
+    "name": "Setter Irlandês"
+  },
+  {
+    "id": 191,
+    "name": "Shar Pei"
+  },
+  {
+    "id": 192,
+    "name": "Shih Tzu"
+  },
+  {
+    "id": 193,
+    "name": "Spaniel Bretão"
+  },
+  {
+    "id": 194,
+    "name": "Spaniel Francês"
+  },
+  {
+    "id": 195,
+    "name": "Spitz Alemão"
+  },
+  {
+    "id": 196,
+    "name": "Spitz Japonês"
+  },
+  {
+    "id": 197,
+    "name": "Springer Spaniel Inglês"
+  },
+  {
+    "id": 198,
+    "name": "Staff Bull Terrier"
+  },
+  {
+    "id": 199,
+    "name": "Teckel (Dachshund)"
+  },
+  {
+    "id": 200,
+    "name": "Terra Nova"
+  },
+  {
+    "id": 201,
+    "name": "Terrier Brasileiro"
+  },
+  {
+    "id": 202,
+    "name": "Terrier Tibetano"
+  },
+  {
+    "id": 203,
+    "name": "Tosa"
+  },
+  {
+    "id": 204,
+    "name": "Vizsla"
+  },
+  {
+    "id": 205,
+    "name": "Weimaraner"
+  },
+  {
+    "id": 206,
+    "name": "Welsh Corgi Cardigan"
+  },
+  {
+    "id": 207,
+    "name": "Welsh Corgi Pembroke"
+  },
+  {
+    "id": 208,
+    "name": "West Highland W. Terrier"
+  },
+  {
+    "id": 209,
+    "name": "Whippet"
+  },
+  {
+    "id": 210,
+    "name": "Wolfhound Irlandês"
+  },
+  {
+    "id": 211,
+    "name": "Yorkshire Terrier"
+  }
+]
