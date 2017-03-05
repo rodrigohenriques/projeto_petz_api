@@ -12,7 +12,18 @@ const dao = {
 
     return advertisementModel.findOne({
       where: query,
-      include: [breedModel, advertisementPhotoModel, advertisementCategoryModel, ageClassificationModel]
+      attributes: ['id', 'age', 'isHatch', 'isPuppy', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
+      include: [breedModel, advertisementCategoryModel,
+        {
+          model: advertisementPhotoModel,
+          as: 'photos',
+          attributes: ['id', 'photo', 'registerDate']
+        },
+        {
+          model: ageClassificationModel,
+          as: 'ageClassification'
+        }
+      ]
     });
   },
 
@@ -21,9 +32,20 @@ const dao = {
       approved: true
     };
 
-    return advertisementModel.findOne({
+    return advertisementModel.findAll({
       where: query,
-      include: [breedModel, advertisementPhotoModel, advertisementCategoryModel, ageClassificationModel]
+      attributes: ['id', 'age', 'isHatch', 'isPuppy', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
+      include: [breedModel, advertisementCategoryModel,
+        {
+          model: advertisementPhotoModel,
+          as: 'photos',
+          attributes: ['id', 'photo', 'registerDate']
+        },
+        {
+          model: ageClassificationModel,
+          as: 'ageClassification'
+        }
+      ]
     });
   }
 

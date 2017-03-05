@@ -8,6 +8,7 @@ const authenticate = require(path.resolve('src/util/authenticate'));
 const constants = require(path.resolve('src/util/constants'));
 const userRoutes = require(path.resolve('src/routes/user'));
 const breedRoutes = require(path.resolve('src/routes/breed'));
+const advertisementRoutes = require(path.resolve('src/routes/advertisement'));
 
 
 /* App Configuration */
@@ -31,6 +32,7 @@ app.all('/api/*', function(req, res, next) {
 
 userRoutes(app);
 breedRoutes(app);
+advertisementRoutes(app);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log(app.get('title') + ' listening on port ' + app.get('port'));

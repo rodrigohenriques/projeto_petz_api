@@ -12,13 +12,25 @@ const advertisement = sequelize.define('advertisement', {
     type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true
   },
   categoryId: {
-    type: Sequelize.INTEGER, allowNull: false, field: 'category_id'
+    type: Sequelize.INTEGER, allowNull: false, field: 'category_id',
+    references: {
+      model: 'category',
+      key: 'id'
+    }
   },
   breeId: {
-    type: Sequelize.INTEGER, allowNull: false, field: 'breed_id'
+    type: Sequelize.INTEGER, allowNull: false, field: 'breed_id',
+    references: {
+      model: 'breed',
+      key: 'id'
+    }
   },
   ageClassificationId: {
-    type: Sequelize.INTEGER, allowNull: false, field: 'age_classification_id'
+    type: Sequelize.INTEGER, allowNull: false, field: 'age_classification_id',
+    references: {
+      model: 'age_classification',
+      key: 'id'
+    }
   },
   predominantColor: {
     type: Sequelize.STRING(50), allowNull: true, field: 'predominant_color'
@@ -63,13 +75,10 @@ const advertisement = sequelize.define('advertisement', {
     }
 );
 
-advertisement.belongsTo(advertisementCategoryModel, {as: 'category', foreignKey: 'category_id'});
-advertisement.belongsTo(breedModel, {as: 'breed', foreignKey: 'breed_id'});
+advertisement.belongsTo(advertisementCategoryModel, {foreignKey: 'category_id'});
+advertisement.belongsTo(breedModel, {foreignKey: 'breed_id'});
 advertisement.belongsTo(ageClassificationModel, {as: 'ageClassification', foreignKey: 'age_classification_id'});
 
-advertisement.hasMany(advertisementPhotoModel, {
-  foreignKey: 'advertisementId',
-  as: 'photos'
-});
+advertisement.hasMany(advertisementPhotoModel, { as: 'photos', foreignKey: 'advertisement_id' });
 
 module.exports = advertisement;
