@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "age": 4,
+    "isHatch": false,
+    "isPuppy": true,
+    "state": "São Paulo",
+    "city": "São Paulo",
+    "price": null,
+    "phone": "11984654492",
+    "registerDate": "2017-03-05T14:22:07.809Z",
+    "approved": true,
+    "breed": {
+      "id": 1,
+      "name": "Outros"
+    },
+    "category": {
+      "id": 1,
+      "name": "Adoção"
+    },
+    "user": {
+      "id": 1,
+      "name": "Diego Ramos",
+      "email": "rdiego26@gmail.com",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b",
+      "address": "Rua teste",
+      "addressNumber": "S/N",
+      "state": "São Paulo",
+      "city": "São Paulo",
+      "zipCode": "00000000",
+      "phone": "21984654492",
+      "registerAt": "2017-02-07T00:56:49.065Z",
+      "lastUpdate": null,
+      "active": true
+    },
+    "photos": [
+      {
+        "id": 1,
+        "photo": "aaaaaa",
+        "registerDate": "2017-03-05T16:07:37.987Z"
+      },
+      {
+        "id": 2,
+        "photo": "bbbbb",
+        "registerDate": "2017-03-05T16:07:42.581Z"
+      }
+    ],
+    "ageClassification": null
+  }
+]
