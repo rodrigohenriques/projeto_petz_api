@@ -2,7 +2,7 @@ const path = require('path'),
     sequelize = require(path.resolve('src/util/sequelize-connection')),
     Sequelize = require('sequelize');
 
-const advertisementCategory = sequelize.define('advertisement_category', {
+const advertisementCategory = sequelize.define('category', {
 
   id: {
     type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true
