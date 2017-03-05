@@ -1,5 +1,6 @@
 const path = require('path'),
     sequelize = require(path.resolve('src/util/sequelize-connection')),
+    advertisementPhotoModel = require(path.resolve('src/model/advertisementPhoto')),
     Sequelize = require('sequelize');
 
 const advertisement = sequelize.define('advertisement', {
@@ -58,5 +59,10 @@ const advertisement = sequelize.define('advertisement', {
       tableName: 'advertisement'
     }
 );
+
+advertisement.hasMany(advertisementPhotoModel, {
+  foreignKey: 'advertisementId',
+  as: 'photos'
+});
 
 module.exports = advertisement;
