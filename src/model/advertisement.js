@@ -15,7 +15,7 @@ const advertisement = sequelize.define('advertisement', {
     type: Sequelize.INTEGER, allowNull: false, field: 'category_id'
   },
   breeId: {
-    type: Sequelize.INTEGER, allowNull: false, field: 'bree_id'
+    type: Sequelize.INTEGER, allowNull: false, field: 'breed_id'
   },
   ageClassificationId: {
     type: Sequelize.INTEGER, allowNull: false, field: 'age_classification_id'
