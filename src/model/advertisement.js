@@ -1,6 +1,9 @@
 const path = require('path'),
     sequelize = require(path.resolve('src/util/sequelize-connection')),
     advertisementPhotoModel = require(path.resolve('src/model/advertisementPhoto')),
+    breedModel = require(path.resolve('src/model/breed')),
+    advertisementCategoryModel = require(path.resolve('src/model/advertisementCategory')),
+    ageClassificationModel = require(path.resolve('src/model/ageClassification')),
     Sequelize = require('sequelize');
 
 const advertisement = sequelize.define('advertisement', {
@@ -59,6 +62,10 @@ const advertisement = sequelize.define('advertisement', {
       tableName: 'advertisement'
     }
 );
+
+advertisement.belongsTo(advertisementCategoryModel, {as: 'category', foreignKey: 'category_id'});
+advertisement.belongsTo(breedModel, {as: 'breed', foreignKey: 'breed_id'});
+advertisement.belongsTo(ageClassificationModel, {as: 'ageClassification', foreignKey: 'age_classification_id'});
 
 advertisement.hasMany(advertisementPhotoModel, {
   foreignKey: 'advertisementId',
