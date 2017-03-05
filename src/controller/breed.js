@@ -2,7 +2,6 @@
 
 const path = require('path');
 const breedDao = require(path.resolve('src/dao/breed'));
-const authenticate = require(path.resolve('src/util/authenticate'));
 const breedController = {
 
   get: function(req, res) {
