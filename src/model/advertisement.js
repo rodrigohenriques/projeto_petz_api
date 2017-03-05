@@ -3,6 +3,7 @@ const path = require('path'),
     advertisementPhotoModel = require(path.resolve('src/model/advertisementPhoto')),
     breedModel = require(path.resolve('src/model/breed')),
     advertisementCategoryModel = require(path.resolve('src/model/advertisementCategory')),
+    userModel = require(path.resolve('src/model/user')),
     ageClassificationModel = require(path.resolve('src/model/ageClassification')),
     Sequelize = require('sequelize');
 
@@ -22,6 +23,13 @@ const advertisement = sequelize.define('advertisement', {
     type: Sequelize.INTEGER, allowNull: false, field: 'breed_id',
     references: {
       model: 'breed',
+      key: 'id'
+    }
+  },
+  userId: {
+    type: Sequelize.INTEGER, allowNull: false, field: 'user_id',
+    references: {
+      model: 'user',
       key: 'id'
     }
   },
@@ -76,6 +84,7 @@ const advertisement = sequelize.define('advertisement', {
 );
 
 advertisement.belongsTo(advertisementCategoryModel, {foreignKey: 'category_id'});
+advertisement.belongsTo(userModel, {foreignKey: 'user_id'});
 advertisement.belongsTo(breedModel, {foreignKey: 'breed_id'});
 advertisement.belongsTo(ageClassificationModel, {as: 'ageClassification', foreignKey: 'age_classification_id'});
 

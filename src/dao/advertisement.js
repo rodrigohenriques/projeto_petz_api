@@ -1,6 +1,7 @@
 const path = require('path'),
     advertisementPhotoModel = require(path.resolve('src/model/advertisementPhoto')),
     breedModel = require(path.resolve('src/model/breed')),
+    userModel = require(path.resolve('src/model/user')),
     advertisementCategoryModel = require(path.resolve('src/model/advertisementCategory')),
     ageClassificationModel = require(path.resolve('src/model/ageClassification')),
     advertisementModel = require(path.resolve('src/model/advertisement'));
@@ -14,6 +15,10 @@ const dao = {
       where: query,
       attributes: ['id', 'age', 'isHatch', 'isPuppy', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
       include: [breedModel, advertisementCategoryModel,
+        {
+          model: userModel,
+          attributes: ['id', 'name', 'email', 'phone']
+        },
         {
           model: advertisementPhotoModel,
           as: 'photos',
@@ -36,6 +41,10 @@ const dao = {
       where: query,
       attributes: ['id', 'age', 'isHatch', 'isPuppy', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
       include: [breedModel, advertisementCategoryModel,
+        {
+          model: userModel,
+          attributes: ['id', 'name', 'email', 'phone']
+        },
         {
           model: advertisementPhotoModel,
           as: 'photos',
