@@ -19,7 +19,7 @@ const advertisement = sequelize.define('advertisement', {
       key: 'id'
     }
   },
-  breeId: {
+  breedId: {
     type: Sequelize.INTEGER, allowNull: false, field: 'breed_id',
     references: {
       model: 'breed',
