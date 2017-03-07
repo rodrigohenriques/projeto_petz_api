@@ -16,13 +16,11 @@ const app = express();
 app.set('port', constants.server.port);
 app.set('title', constants.app.name);
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '15mb'}));
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: false, limit: '15mb' }));
 app.use(helmet());
 
-app.use(bodyParser.json({limit: '10mb'}));
-app.use(bodyParser.urlencoded({ extended: false, limit: '10mb' }));
 
 app.use(express.static('public'));
 app.use('/admin', express.static('public'));
