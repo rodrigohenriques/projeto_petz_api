@@ -8,10 +8,14 @@ const path = require('path'),
 
 const dao = {
 
+  create: function(advertisement) {
+    return advertisementModel.create(advertisement);
+  },
+
   findOne: function(query) {
     query = query || {};
 
-    return advertisementModel.findOne({
+    return advertisementModel.find({
       where: query,
       attributes: ['id', 'age', 'isHatch', 'isPuppy', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
       include: [breedModel, advertisementCategoryModel,

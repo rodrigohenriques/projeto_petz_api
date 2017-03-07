@@ -34,7 +34,7 @@ const advertisement = sequelize.define('advertisement', {
     }
   },
   ageClassificationId: {
-    type: Sequelize.INTEGER, allowNull: false, field: 'age_classification_id',
+    type: Sequelize.INTEGER, allowNull: true, field: 'age_classification_id',
     references: {
       model: 'age_classification',
       key: 'id'
@@ -68,10 +68,13 @@ const advertisement = sequelize.define('advertisement', {
     }
   },
   registerDate: {
-    type: Sequelize.DATE, allowNull: false, defaultValue: Sequelize.NOW, field: 'register_date'
+    type: Sequelize.DATE, allowNull: false, defaultValue: sequelize.literal('NOW()'), field: 'register_date'
   },
   approved: {
     type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false
+  },
+  description: {
+    type: Sequelize.STRING(500), allowNull: false
   }
 
 },

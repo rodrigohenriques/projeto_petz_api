@@ -8,7 +8,7 @@ const advertisementPhoto = sequelize.define('advertisement_photo', {
     type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true
   },
   advertisementId: {
-    type: Sequelize.INTEGER, allowNull: false, field: 'advertisement_Id',
+    type: Sequelize.INTEGER, allowNull: false, field: 'advertisement_id',
     references: {
       model: 'advertisement',
       key: 'id'
@@ -18,7 +18,7 @@ const advertisementPhoto = sequelize.define('advertisement_photo', {
     type: Sequelize.TEXT, allowNull: false
   },
   registerDate: {
-    type: Sequelize.DATE, allowNull: false, defaultValue: Sequelize.NOW, field: 'register_date'
+    type: Sequelize.DATE, allowNull: false, defaultValue: sequelize.literal('NOW()'), field: 'register_date'
   }
 },
     {
