@@ -1,0 +1,39 @@
+{
+  "id": 52,
+  "age": 4,
+  "isHatch": false,
+  "isPuppy": true,
+  "state": "São Paulo",
+  "city": "São Paulo",
+  "price": null,
+  "phone": "11984654492",
+  "registerDate": "2017-03-07T01:34:20.260Z",
+  "approved": true,
+  "breed": {
+    "id": 2,
+    "name": "Affenpinscher"
+  },
+  "category": {
+    "id": 2,
+    "name": "Venda"
+  },
+  "user": {
+    "id": 1,
+    "name": "Diego Ramos",
+    "email": "rdiego26@gmail.com",
+    "phone": "21984654492"
+  },
+  "photos": [
+    {
+      "id": 53,
+      "photo": "BASE64-----",
+      "registerDate": "2017-03-07T01:34:20.295Z"
+    },
+    {
+      "id": 54,
+      "photo": "BASE64.......",
+      "registerDate": "2017-03-07T01:34:20.296Z"
+    }
+  ],
+  "ageClassification": null
+}
