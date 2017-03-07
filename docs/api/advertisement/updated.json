@@ -1,0 +1,23 @@
+{
+  "age": 13,
+  "isHatch": false,
+  "isPuppy": false,
+  "state": "São Paulo",
+  "city": "São Paulo",
+  "price": null,
+  "phone": "11984654492",
+  "approved": true,
+  "breedId": 5,
+  "categoryId": 1,
+  "description": "NOVA DESCRICAO...DDDSS..",
+  "photos": [
+    {
+      "id": 53,
+      "photo": "BASE64--NOVA2---"
+    },
+    {
+      "id": 54,
+      "photo": "BASE64...NOVA2...."
+    }
+  ]
+}
