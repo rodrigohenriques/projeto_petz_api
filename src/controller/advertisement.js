@@ -69,6 +69,26 @@ const advertisementController = {
 
   },
 
+  remove: function(req, res) {
+
+    const _advertisementId = req.params.id;
+    const advertisement = {
+      approved: false
+    };
+    const filter = {
+      id: _advertisementId
+    };
+
+    advertisementDao.update(advertisement, filter).then(function() {
+
+      res.status(200).json();
+
+    }).catch(function(error) {
+      res.status(500).json(error);
+    });
+
+  },
+
   get: function(req, res) {
     let id = req.params.id || '';
 
