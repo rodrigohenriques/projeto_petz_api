@@ -1,0 +1,22 @@
+{
+  "age": 4,
+  "isHatch": false,
+  "isPuppy": true,
+  "state": "São Paulo",
+  "city": "São Paulo",
+  "price": null,
+  "phone": "11984654492",
+  "approved": true,
+  "breedId": 2,
+  "categoryId": 2,
+  "userId": 1,
+  "description": "DESCRICAO...DDDSS..",
+  "photos": [
+    {
+      "photo": "BASE64-----"
+    },
+    {
+      "photo": "BASE64......."
+    }
+  ]
+}
