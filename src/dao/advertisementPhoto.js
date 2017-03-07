@@ -10,7 +10,7 @@ const dao = {
 
   update: function(newObject, filter) {
 
-    newObject = R.omit(['advertisement_id'], newObject);
+    newObject = R.omit(['id'], newObject);
 
     return advertisementPhotoModel.update(newObject, { returning: true, where: filter });
 

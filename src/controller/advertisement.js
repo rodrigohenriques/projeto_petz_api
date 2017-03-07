@@ -16,8 +16,9 @@ const advertisementController = {
     advertisementDao.create(_advertisement).then(function(createdAdvertisement) {
 
       let photoPromises = [];
+      let photos = _advertisement.photos || [];
 
-      _advertisement.photos.forEach(function(photo) {
+      photos.forEach(function(photo) {
         photo.advertisementId = createdAdvertisement.id;
         photoPromises.push(advertisementPhotoDao.create(photo));
       });
@@ -37,6 +38,35 @@ const advertisementController = {
     }).catch(function(error) {
       res.status(500).json(error);
     });
+  },
+
+  update: function(req, res) {
+
+    const _advertisementId = req.params.id;
+    const advertisement = req.body;
+    const filter = {
+      id: _advertisementId
+    };
+
+    advertisementDao.update(advertisement, filter).then(function() {
+
+      let photoPromises = [];
+      let photos = advertisement.photos || [];
+
+      photos.forEach(function(photo) {
+        photoPromises.push(advertisementPhotoDao.update(photo, { id: photo.id }));
+      });
+
+      Promise.all(photoPromises).then(function() {
+        res.status(200).json(advertisement);
+      }).catch(function(errors) {
+        res.status(500).json(errors);
+      });
+
+    }).catch(function(error) {
+      res.status(500).json(error);
+    });
+
   },
 
   get: function(req, res) {

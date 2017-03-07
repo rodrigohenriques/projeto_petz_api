@@ -1,6 +1,7 @@
 const path = require('path'),
     advertisementPhotoModel = require(path.resolve('src/model/advertisementPhoto')),
     breedModel = require(path.resolve('src/model/breed')),
+    R = require('ramda'),
     userModel = require(path.resolve('src/model/user')),
     advertisementCategoryModel = require(path.resolve('src/model/advertisementCategory')),
     ageClassificationModel = require(path.resolve('src/model/ageClassification')),
@@ -10,6 +11,14 @@ const dao = {
 
   create: function(advertisement) {
     return advertisementModel.create(advertisement);
+  },
+
+  update: function(newObject, filter) {
+
+    newObject = R.omit(['id', 'photos', 'userId'], newObject);
+
+    return advertisementModel.update(newObject, { returning: true, where: filter });
+
   },
 
   findOne: function(query) {
