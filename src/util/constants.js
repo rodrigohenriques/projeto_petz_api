@@ -25,6 +25,15 @@ const constants = {
       token: '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',
       templateActiveUser: '766c5f55-b70e-4214-afc4-4c763a41a8ea'
     }
+  },
+
+  messages: {
+    advertisement: {
+      blankAge: 'Informe a idade!',
+      blankAgeClassification: 'Informe a classificação de idade!',
+      blankBreed: 'Informe a raça!',
+      blankPredominantColor: 'Informe a cor predominante!'
+    }
   }
 
 };

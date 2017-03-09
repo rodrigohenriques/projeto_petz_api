@@ -1,7 +1,9 @@
 const path = require('path'),
+    R = require('ramda'),
     sequelize = require(path.resolve('src/util/sequelize-connection')),
     advertisementPhotoModel = require(path.resolve('src/model/advertisementPhoto')),
     breedModel = require(path.resolve('src/model/breed')),
+    constants = require(path.resolve('src/util/constants')),
     advertisementCategoryModel = require(path.resolve('src/model/advertisementCategory')),
     userModel = require(path.resolve('src/model/user')),
     ageClassificationModel = require(path.resolve('src/model/ageClassification')),
@@ -20,7 +22,7 @@ const advertisement = sequelize.define('advertisement', {
     }
   },
   breedId: {
-    type: Sequelize.INTEGER, allowNull: false, field: 'breed_id',
+    type: Sequelize.INTEGER, allowNull: true, field: 'breed_id',
     references: {
       model: 'breed',
       key: 'id'
@@ -89,5 +91,21 @@ advertisement.belongsTo(breedModel, {foreignKey: 'breed_id'});
 advertisement.belongsTo(ageClassificationModel, {as: 'ageClassification', foreignKey: 'age_classification_id'});
 
 advertisement.hasMany(advertisementPhotoModel, { as: 'photos', foreignKey: 'advertisement_id' });
+
+advertisement.hook('beforeCreate', function(advertisementInstance) {
+
+  if (R.all(checkIsNull)([advertisementInstance.age, advertisementInstance.ageClassificationId])) {
+    return Sequelize.Promise.reject(constants.messages.advertisement.blankAge);
+  }
+
+  if (R.all(checkIsNull)([advertisementInstance.breedId, advertisementInstance.predominantColor])) {
+    return Sequelize.Promise.reject(constants.messages.advertisement.blankBreed);
+  }
+
+});
+
+function checkIsNull(value) {
+  return value == null;
+}
 
 module.exports = advertisement;
