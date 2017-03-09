@@ -1,11 +1,11 @@
 ﻿/*
 Created: 23/01/2017
-Modified: 05/03/2017
+Modified: 09/03/2017
 Project: Pets
 Model: Postgres 9.0
 Company: Pets
 Author: Diego Ramos
-Version: 0.0.5
+Version: 0.0.6
 Database: PostgreSQL 9.0
 */
 
@@ -52,7 +52,6 @@ CREATE TABLE "advertisement"(
  "predominant_color" Character varying(50),
  "age" Integer,
  "is_hatch" Boolean DEFAULT false NOT NULL,
- "is_puppy" Boolean DEFAULT false NOT NULL,
  "state" Character varying(60) NOT NULL,
  "city" Character varying(100) NOT NULL,
  "price" Numeric(15,4),
@@ -66,8 +65,6 @@ CREATE TABLE "advertisement"(
 )
 ;
 COMMENT ON COLUMN "advertisement"."is_hatch" IS 'Ninhada'
-;
-COMMENT ON COLUMN "advertisement"."is_puppy" IS 'Filhote'
 ;
 
 -- Create indexes for table advertisement
