@@ -1,5 +1,6 @@
 {
-  "age": 4,
+  "age": null,
+  "ageClassificationId": 4,
   "isHatch": false,
   "isPuppy": true,
   "state": "São Paulo",
