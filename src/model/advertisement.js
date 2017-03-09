@@ -104,6 +104,20 @@ advertisement.hook('beforeCreate', function(advertisementInstance) {
 
 });
 
+advertisement.hook('beforeBulkUpdate', function(bulkedAdvertisement) {
+
+  let advertisementInstance = bulkedAdvertisement.attributes;
+
+  if (R.all(checkIsNull)([advertisementInstance.age, advertisementInstance.ageClassificationId])) {
+    return Sequelize.Promise.reject(constants.messages.advertisement.blankAge);
+  }
+
+  if (R.all(checkIsNull)([advertisementInstance.breedId, advertisementInstance.predominantColor])) {
+    return Sequelize.Promise.reject(constants.messages.advertisement.blankBreed);
+  }
+
+});
+
 function checkIsNull(value) {
   return value == null;
 }
