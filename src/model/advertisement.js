@@ -51,6 +51,9 @@ const advertisement = sequelize.define('advertisement', {
   isHatch: {
     type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false, field: 'is_hatch'
   },
+  isVaccinated: {
+    type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false, field: 'vaccinated'
+  },
   state: {
     type: Sequelize.STRING(60), allowNull: false
   },

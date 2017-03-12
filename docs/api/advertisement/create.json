@@ -2,7 +2,7 @@
   "age": null,
   "ageClassificationId": 4,
   "isHatch": false,
-  "isPuppy": true,
+  "isVaccinated": true,
   "state": "São Paulo",
   "city": "São Paulo",
   "price": null,

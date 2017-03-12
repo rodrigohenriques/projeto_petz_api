@@ -1,7 +1,7 @@
 {
   "age": 13,
   "isHatch": false,
-  "isPuppy": false,
+  "isVaccinated": false,
   "state": "São Paulo",
   "city": "São Paulo",
   "price": null,

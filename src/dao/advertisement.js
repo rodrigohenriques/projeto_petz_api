@@ -26,7 +26,7 @@ const dao = {
 
     return advertisementModel.find({
       where: query,
-      attributes: ['id', 'age', 'isHatch', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
+      attributes: ['id', 'age', 'isHatch', 'isVaccinated', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
       include: [breedModel, advertisementCategoryModel,
         {
           model: userModel,
@@ -52,7 +52,7 @@ const dao = {
 
     return advertisementModel.findAll({
       where: query,
-      attributes: ['id', 'age', 'isHatch', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
+      attributes: ['id', 'age', 'isHatch', 'isVaccinated', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
       include: [breedModel, advertisementCategoryModel,
         {
           model: userModel,
