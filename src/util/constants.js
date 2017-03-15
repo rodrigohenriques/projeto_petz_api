@@ -9,7 +9,8 @@ const constants = {
   },
 
   app: {
-    name: 'Pets'
+    name: 'Pets',
+    limitPerRequest: 5
   },
 
   header: {
