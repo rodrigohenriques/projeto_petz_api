@@ -6,6 +6,11 @@ const R = require('ramda');
 
 let sessions = [];
 
+function checkisUserOperationAllowed(req) {
+  return (req.originalUrl.indexOf('/api/user') > -1 && req.method === 'GET') ||
+    (req.originalUrl.indexOf('/api/user') > -1 && req.method === 'POST');
+}
+
 let authentication = {
 
 
@@ -13,7 +18,7 @@ let authentication = {
     let token = req.headers['x-access-token'] ||  null;
     let requestURL = req.originalUrl;
 
-    if (requestURL === '/api/user/login' || (requestURL.indexOf('/api/user') > -1 && req.method === 'GET')) {
+    if (requestURL === '/api/user/login' || checkisUserOperationAllowed(req)) {
       next();
     } else if (!token) {
       res.status(401).end();
