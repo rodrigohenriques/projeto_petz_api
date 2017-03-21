@@ -40,6 +40,19 @@ const userController = {
 
   },
 
+  update: function(req, res) {
+    const filter = {
+      id: req.params.id || 0
+    };
+    const input = req.body;
+
+    userDao.update(input, filter).then(function() {
+      res.status(200).end();
+    }).catch(function(error) {
+      res.status(500).json(error);
+    });
+  },
+
   get: function(req, res) {
     let email = req.params.email || '';
 

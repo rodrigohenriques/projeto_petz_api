@@ -9,6 +9,7 @@ module.exports = function(app) {
   router.get('/api/user/:email', userController.get);
   router.post('/api/user/login', userController.login);
   router.post('/api/user', userController.create);
+  router.put('/api/user/:id', userController.update);
 
   app.use(router);
 
