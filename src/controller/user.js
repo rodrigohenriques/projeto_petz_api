@@ -61,6 +61,14 @@ const userController = {
     }).catch(function(error) {
       res.status(500).json(error);
     });
+  },
+
+  countActiveUsers: function(req, res) {
+    userDao.countActives().then(function(result) {
+      res.status(200).json(result);
+    }).catch(function(error) {
+      res.status(500).json(error);
+    });
   }
 
 };

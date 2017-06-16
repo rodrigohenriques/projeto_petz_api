@@ -1,6 +1,7 @@
 const path = require('path'),
   R = require('ramda'),
-    userModel = require(path.resolve('src/model/user'));
+	sequelize = require(path.resolve('src/util/sequelize-connection')),
+  userModel = require(path.resolve('src/model/user'));
 
 const dao = {
 
@@ -25,6 +26,15 @@ const dao = {
     newObject = R.omit(['id'], newObject);
 
     return userModel.update(newObject, { returning: true, where: filter });
+  },
+
+  countActives: function() {
+
+    const _filter = {
+      active: true
+    };
+
+    return userModel.count({where: _filter});
   }
 
 };
