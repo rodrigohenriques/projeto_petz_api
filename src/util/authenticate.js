@@ -43,7 +43,7 @@ let authentication = {
 
           sessions.push({
             token: fetchedSession.token,
-            expires: moment().add(60, 'seconds')
+            expires: moment().add(5, 'minutes')
           });
 
           next();
@@ -58,7 +58,7 @@ let authentication = {
   getNewToken: function() {
     let session = {
       token: uuidV4(),
-      expires: moment().add(60, 'seconds')
+      expires: moment().add(5, 'minutes')
     };
 
     sessions.push(session);
