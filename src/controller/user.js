@@ -3,6 +3,7 @@
 const path = require('path');
 const userDao = require(path.resolve('src/dao/user'));
 const authenticate = require(path.resolve('src/util/authenticate'));
+const md5 = require('md5');
 const R = require('ramda');
 const userController = {
 
@@ -11,7 +12,7 @@ const userController = {
     let loginData = req.body;
     const filter = {
       email: loginData.email,
-      password: loginData.password,
+      password: md5(loginData.password),
       active: true
     };
 
@@ -31,6 +32,7 @@ const userController = {
 
   create: function(req, res) {
     let user = req.body;
+    user.password = md5(user.password);
 
     userDao.create(user).then(function(createdUser) {
       res.status(200).json(createdUser);
