@@ -3,7 +3,7 @@ const mocks = {
   fullUser: {
     name: 'Valid name',
     email: 'user@valid.com',
-    password: '827ccb0eea8a706c4c34a16891f84e7b',
+    password: 'senha',
     address: 'Rua teste',
     addressNumber: '90',
     state: 'São Paulo',
@@ -14,7 +14,8 @@ const mocks = {
 
 	minimalUser: {
 		name: 'Valid name',
-		email: 'other@valid.com'
+		email: 'other@valid.com',
+		password: 'senha'
 	},
 
 	breedOthers: {
