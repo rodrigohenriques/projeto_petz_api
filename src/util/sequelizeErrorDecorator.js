@@ -16,6 +16,8 @@ const decorator = {
     if (objError.message.indexOf('email_user') != -1) {
       objError.message = 'E-mail já utilizado!'
     }
+
+    return objError;
   }
 
 };
