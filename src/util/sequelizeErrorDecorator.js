@@ -17,7 +17,7 @@ const decorator = {
       objError.message = 'E-mail já utilizado!'
     }
 
-    return objError;
+    return R.omit(['name', 'errors'], objError);
   }
 
 };
