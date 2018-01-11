@@ -3,8 +3,8 @@
 const path = require('path');
 const userDao = require(path.resolve('src/dao/user'));
 const authenticate = require(path.resolve('src/util/authenticate'));
+const decoratorError = require(path.resolve('src/util/sequelizeErrorDecorator'));
 const md5 = require('md5');
-const R = require('ramda');
 const userController = {
 
   login: function(req, res) {
@@ -37,7 +37,12 @@ const userController = {
     userDao.create(user).then(function(createdUser) {
       res.status(200).json(createdUser);
     }).catch(function(error) {
-      res.status(500).json(error);
+      if (decoratorError.isSequelizeError(error)) {
+        res.status(400).json(decoratorError.decorateUserErrors(error));
+      } else {
+        res.status(500).json(error);
+      }
+
     });
 
   },
