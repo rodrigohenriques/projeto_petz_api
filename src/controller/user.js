@@ -33,6 +33,7 @@ const userController = {
   create: function(req, res) {
     let user = req.body;
     user.password = md5(user.password);
+    user.active = true;
 
     userDao.create(user).then(function(createdUser) {
       res.status(200).json(createdUser);
