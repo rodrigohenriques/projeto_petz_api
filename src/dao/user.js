@@ -14,7 +14,7 @@ const dao = {
   },
 
   create: function(user) {
-    const newUser = R.pick(['name', 'email'], user);
+    const newUser = R.pick(['name', 'email', 'password', 'active'], user);
     return userModel.create(newUser);
   },
 
