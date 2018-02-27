@@ -18,7 +18,7 @@ app.set('title', constants.app.name);
 
 app.use(bodyParser.json({limit: '15mb'}));
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false, limit: '15mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '15mb' }));
 app.use(helmet());
 
 
