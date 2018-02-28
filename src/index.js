@@ -26,8 +26,6 @@ app.use(express.static('public'));
 app.use('/admin', express.static('public'));
 
 app.all('/api/*', function(req, res, next) {
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
   authenticate.checkToken(req, res, next);
 });
 
