@@ -18,8 +18,13 @@ const userController = {
 
     userDao.findOne(filter).then(function(user) {
       if (user) {
-        user.setDataValue('session', authenticate.getNewToken());
-        res.status(200).json(user);
+	      authenticate.getNewToken().then(function(session) {
+		      user.setDataValue('session', session);
+		      res.status(200).json(user);
+        }).catch(function(error) {
+		      res.status(500).json(error);
+	      });
+
       } else {
         res.status(401).end();
       }

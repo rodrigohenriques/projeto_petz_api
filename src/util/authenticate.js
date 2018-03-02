@@ -2,9 +2,8 @@
 
 const moment = require('moment');
 const uuidV4 = require('uuid/v4');
-const R = require('ramda');
-
-let sessions = [];
+const path = require('path');
+const sessionDao = require(path.resolve('src/dao/session'));
 
 function checkIsUserOperationAllowed(req) {
   return (req.originalUrl.indexOf('/api/user') > -1 && req.method === 'GET') ||
@@ -24,32 +23,34 @@ let authentication = {
     } else if (!token) {
       res.status(401).end();
     } else {
-      let fetchedSession = R.find(R.propEq('token', token))(sessions);
-
-      if (!fetchedSession) {
-        res.status(400).end();
-      } else {
-
-        let sessionTime = moment(fetchedSession.expires);
-        let nowTime = moment();
-
-        if (sessionTime.isSameOrBefore(nowTime)) {
-          res.status(401).end();
+      sessionDao.findOne({token: token}).then(function(fetchedData) {
+        if (!fetchedData) {
+          res.status(400).end();
         } else {
+          let sessionTime = moment(fetchedData.expires);
+          let nowTime = moment();
 
-          sessions = R.reject(function(item) {
-            return item.token == fetchedSession.token;
-          }, sessions);
+          if (sessionTime.isSameOrBefore(nowTime)) {
+            res.status(401).end();
+          } else {
+            let session = {
+              token: fetchedData.token,
+              expires: moment().add(5, 'minutes')
+            };
 
-          sessions.push({
-            token: fetchedSession.token,
-            expires: moment().add(5, 'minutes')
-          });
+            sessionDao.deleteInactives()
+	            .then(function() {})
+	            .catch(function(error) {
+              console.log(error);
+            });
+            next();
+          }
 
-          next();
         }
 
-      }
+      }).catch(function(error) {
+        res.status(500).json(error);
+      });
 
     }
 
@@ -60,12 +61,8 @@ let authentication = {
       token: uuidV4(),
       expires: moment().add(5, 'minutes')
     };
-
-    sessions.push(session);
-
-    return session;
+    return sessionDao.create(session);
   }
-
 
 };
 
