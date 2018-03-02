@@ -1,11 +1,11 @@
 ﻿/*
 Created: 23/01/2017
-Modified: 09/03/2017
+Modified: 02/03/2018
 Project: Pets
 Model: Postgres 9.0
 Company: Pets
 Author: Diego Ramos
-Version: 0.0.6
+Version: 0.0.8
 Database: PostgreSQL 9.0
 */
 
@@ -61,7 +61,8 @@ CREATE TABLE "advertisement"(
  "have_microchip" Boolean DEFAULT false NOT NULL,
  "description" Character varying(500) NOT NULL,
  "register_date" Timestamp with time zone DEFAULT NOW() NOT NULL,
- "approved" Boolean DEFAULT false NOT NULL
+ "approved" Boolean DEFAULT false NOT NULL,
+ "vaccinated" Boolean DEFAULT false NOT NULL
 )
 ;
 COMMENT ON COLUMN "advertisement"."is_hatch" IS 'Ninhada'
@@ -351,6 +352,20 @@ CREATE INDEX "idx_adverti_photo" ON "advertisement_photo" ("advertisement_id")
 -- Add keys for table advertisement_photo
 
 ALTER TABLE "advertisement_photo" ADD CONSTRAINT "pk_advert_photo" PRIMARY KEY ("id")
+;
+
+-- Table session
+
+CREATE TABLE "session"(
+ "id" BigSerial NOT NULL,
+ "token" Varchar NOT NULL,
+ "expires" Timestamp with time zone NOT NULL
+)
+;
+
+-- Add keys for table session
+
+ALTER TABLE "session" ADD CONSTRAINT "pk_session" PRIMARY KEY ("id")
 ;
 
 -- Create relationships section ------------------------------------------------- 
