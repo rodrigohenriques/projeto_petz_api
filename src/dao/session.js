@@ -19,6 +19,10 @@ const dao = {
     return sessionModel.create(session);
   },
 
+  incrementeToken(token) {
+    return sessionModel.update(token, { returning: true, where: { id: token.id  } });
+  },
+
   deleteInactives: function() {
     const query = {
       expires: {

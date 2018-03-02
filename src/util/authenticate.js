@@ -33,10 +33,15 @@ let authentication = {
           if (sessionTime.isSameOrBefore(nowTime)) {
             res.status(401).end();
           } else {
-            let session = {
-              token: fetchedData.token,
-              expires: moment().add(5, 'minutes')
-            };
+
+            let newSession = fetchedData;
+            newSession.expires = moment(newSession.expires).add(5, 'minutes');
+
+	          sessionDao.incrementeToken(newSession)
+		          .then(function() {})
+		          .catch(function(error) {
+			          console.log(error);
+		          });
 
             sessionDao.deleteInactives()
 	            .then(function() {})
