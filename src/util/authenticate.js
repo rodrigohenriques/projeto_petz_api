@@ -43,12 +43,7 @@ let authentication = {
 			          console.log(error);
 		          });
 
-            sessionDao.deleteInactives()
-	            .then(function() {})
-	            .catch(function(error) {
-              console.log(error);
-            });
-            next();
+	          next();
           }
 
         }
@@ -66,6 +61,13 @@ let authentication = {
       token: uuidV4(),
       expires: moment().add(5, 'minutes')
     };
+
+	  sessionDao.deleteInactives()
+		  .then(function() {})
+		  .catch(function(error) {
+			  console.log(error);
+		  });
+
     return sessionDao.create(session);
   }
 
