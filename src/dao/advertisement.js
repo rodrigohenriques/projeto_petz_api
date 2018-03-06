@@ -45,14 +45,15 @@ const dao = {
     });
   },
 
-  findActives: function(filter) {
+  findActives: function(filter, pagination) {
     let query = {
       approved: true
     };
 
-    query = R.mergeAll(query, filter);
+    query = R.merge(query, filter);
 
     return advertisementModel.findAll({
+      order: [['id', 'desc']],
       where: query,
       attributes: ['id', 'age', 'isHatch', 'isVaccinated', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
       include: [breedModel, advertisementCategoryModel,
