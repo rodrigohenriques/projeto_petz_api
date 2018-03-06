@@ -54,9 +54,18 @@ const dao = {
 
     return advertisementModel.findAll({
       order: [['id', 'desc']],
+      limit: 3,
       where: query,
       attributes: ['id', 'age', 'isHatch', 'isVaccinated', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
-      include: [breedModel, advertisementCategoryModel,
+      include: [
+        {
+          model: breedModel,
+          attributes: ['id', 'name']
+        },
+        {
+          model: advertisementCategoryModel,
+          attributes: ['id', 'name']
+        },
         {
           model: userModel,
           attributes: ['id', 'name', 'email', 'phone']

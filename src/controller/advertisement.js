@@ -101,9 +101,10 @@ const advertisementController = {
   },
 
   getAllActive: function(req, res) {
-    let filter = handleFilter(req.params);
+    const filters = handleFilters(req.query);
+    const pagination = handlePagination(req.query);
 
-    advertisementDao.findActives(filter).then(function(fetchedRows) {
+    advertisementDao.findActives(filters, pagination).then(function(fetchedRows) {
       res.status(200).json(fetchedRows);
     }).catch(function(error) {
       res.status(500).json(error);
@@ -112,14 +113,18 @@ const advertisementController = {
 
 };
 
-let handleFilter = (paramsObj) => {
-  let filter = {
-    limit: (paramsObj.limit || constants.app.limitPerRequest)
-      > constants.app.limitPerRequest ? constants.app.limitPerRequest : paramsObj.limit,
-    offset: (paramsObj.page || 0) < 0 ? 0 : paramsObj.page - 1
-  };
+let handleFilters = (paramsObj) => {
+  return R.merge({}, R.pick(['breedId', 'ageClassificationId'], paramsObj));
+};
 
-  return R.mergeAll(filter, R.pick(['breedId', 'ageClassificationId'], paramsObj));
+let handlePagination = (paramsObj) => {
+  paramsObj = paramsObj || {};
+
+  return {
+    limit: ((paramsObj.limit || constants.app.limitPerRequest)
+      > constants.app.limitPerRequest) ? paramsObj.limit : constants.app.limitPerRequest,
+    offset: ((paramsObj.page || 0) < 0) ? paramsObj.page - 1 : 0
+  };
 
 };
 
