@@ -6,6 +6,7 @@ const R = require('ramda');
 const Sequelize = require('sequelize');
 const Promise = Sequelize.Promise;
 const advertisementPhotoDao = require(path.resolve('src/dao/advertisementPhoto'));
+const constants = require(path.resolve('src/util/constants'));
 
 const advertisementController = {
 
@@ -100,13 +101,24 @@ const advertisementController = {
   },
 
   getAllActive: function(req, res) {
+    let filter = handleFilter(req.params);
 
-    advertisementDao.findActives().then(function(fetchedRows) {
+    advertisementDao.findActives(filter).then(function(fetchedRows) {
       res.status(200).json(fetchedRows);
     }).catch(function(error) {
       res.status(500).json(error);
     });
   }
+
+};
+
+let handleFilter = (paramsObj) => {
+  let filter = {
+    limit: paramsObj.limit || constants.app.limitPerRequest,
+    offset: (paramsObj.page || 0) < 0 ? 0 : paramsObj.page - 1
+  };
+
+  return R.mergeAll(filter, R.pick(['breedId', 'ageClassificationId'], paramsObj));
 
 };
 

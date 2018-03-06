@@ -45,10 +45,12 @@ const dao = {
     });
   },
 
-  findActives: function() {
+  findActives: function(filter) {
     let query = {
       approved: true
     };
+
+    query = R.mergeAll(query, filter);
 
     return advertisementModel.findAll({
       where: query,
