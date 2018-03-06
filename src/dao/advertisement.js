@@ -54,7 +54,8 @@ const dao = {
 
     return advertisementModel.findAll({
       order: [['id', 'desc']],
-      limit: 3,
+      offset: pagination.offset,
+      limit: pagination.limit,
       where: query,
       attributes: ['id', 'age', 'isHatch', 'isVaccinated', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
       include: [
