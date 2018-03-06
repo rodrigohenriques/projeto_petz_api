@@ -88,10 +88,10 @@ const advertisement = sequelize.define('advertisement', {
     }
 );
 
-advertisement.belongsTo(advertisementCategoryModel, {foreignKey: 'category_id'});
-advertisement.belongsTo(userModel, {foreignKey: 'user_id'});
-advertisement.belongsTo(breedModel, {foreignKey: 'breed_id'});
-advertisement.belongsTo(ageClassificationModel, {as: 'ageClassification', foreignKey: 'age_classification_id'});
+advertisement.hasOne(advertisementCategoryModel, {foreignKey: 'id'});
+advertisement.hasOne(userModel, {foreignKey: 'id'});
+advertisement.hasOne(breedModel, {foreignKey: 'id'});
+advertisement.hasOne(ageClassificationModel, {as: 'ageClassification', foreignKey: 'id'});
 
 advertisement.hasMany(advertisementPhotoModel, { as: 'photos', foreignKey: 'advertisement_id' });
 
