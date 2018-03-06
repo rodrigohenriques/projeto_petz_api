@@ -114,7 +114,8 @@ const advertisementController = {
 
 let handleFilter = (paramsObj) => {
   let filter = {
-    limit: paramsObj.limit || constants.app.limitPerRequest,
+    limit: (paramsObj.limit || constants.app.limitPerRequest)
+      > constants.app.limitPerRequest ? constants.app.limitPerRequest : paramsObj.limit,
     offset: (paramsObj.page || 0) < 0 ? 0 : paramsObj.page - 1
   };
 
