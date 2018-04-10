@@ -114,7 +114,7 @@ const advertisementController = {
 };
 
 let handleFilters = (paramsObj) => {
-  return R.merge({}, R.pick(['breedId', 'ageClassificationId'], paramsObj));
+  return R.merge({}, R.pick(['breedId', 'ageClassificationId', 'city', 'categoryId'], paramsObj));
 };
 
 let handlePagination = (paramsObj) => {
