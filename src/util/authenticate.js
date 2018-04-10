@@ -25,7 +25,7 @@ let authentication = {
     } else {
       sessionDao.findOne({token: token}).then(function(fetchedData) {
         if (!fetchedData) {
-          res.status(400).end();
+          res.status(401).end();
         } else {
           let sessionTime = moment(fetchedData.expires);
           let nowTime = moment();
