@@ -9,7 +9,7 @@ const constants = require(path.resolve('src/util/constants'));
 const userRoutes = require(path.resolve('src/routes/user'));
 const breedRoutes = require(path.resolve('src/routes/breed'));
 const advertisementRoutes = require(path.resolve('src/routes/advertisement'));
-
+const ageClassificationRoutes = require(path.resolve('src/routes/ageClassification'));
 
 /* App Configuration */
 const app = express();
@@ -32,6 +32,7 @@ app.all('/api/*', function(req, res, next) {
 userRoutes(app);
 breedRoutes(app);
 advertisementRoutes(app);
+ageClassificationRoutes(app);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log(app.get('title') + ' listening on port ' + app.get('port'));
