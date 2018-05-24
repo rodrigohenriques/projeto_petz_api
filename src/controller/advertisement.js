@@ -91,7 +91,7 @@ const advertisementController = {
   },
 
   get: function(req, res) {
-    let id = req.params.id || '';
+    let id = req.params.id || 0;
 
     advertisementDao.findOne({id: id}).then(function(fetchedData) {
       res.status(200).json(fetchedData);
@@ -100,7 +100,7 @@ const advertisementController = {
     });
   },
 
-  getAllActive: function(req, res) {
+  getFiltered: function(req, res) {
     const filters = handleFilters(req.query);
     const pagination = handlePagination(req.query);
 
@@ -114,7 +114,14 @@ const advertisementController = {
 };
 
 let handleFilters = (paramsObj) => {
-  return R.merge({}, R.pick(['breedId', 'ageClassificationId', 'city', 'categoryId'], paramsObj));
+  let paramsToPick = ['breedId', 'ageClassificationId', 'city', 'categoryId', 'userId'];
+  let result = {};
+  if (!R.has('userId')(paramsObj)) {
+    result = {
+      approved: true
+    }
+  }
+  return R.merge(result, R.pick(paramsToPick, paramsObj));
 };
 
 let handlePagination = (paramsObj) => {

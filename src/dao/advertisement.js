@@ -57,7 +57,7 @@ const dao = {
       offset: pagination.offset,
       limit: pagination.limit,
       where: query,
-      attributes: ['id', 'breedId', 'ageClassificationId', 'categoryId',
+      attributes: ['id', 'breedId', 'ageClassificationId', 'categoryId', 'userId', 'approved',
         'age', 'isHatch', 'isVaccinated', 'state', 'city', 'price', 'phone', 'registerDate', 'approved'],
       include: [
         {
